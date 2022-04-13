@@ -32,3 +32,5 @@ digits-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignore the saved model
+/priv/model.axon
