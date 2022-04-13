@@ -17,7 +17,7 @@ defmodule DigitsWeb.Router do
   scope "/", DigitsWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", PageLive, :index
   end
 
   # Other scopes may use custom stacks.
