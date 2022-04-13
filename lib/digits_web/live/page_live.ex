@@ -40,4 +40,17 @@ defmodule DigitsWeb.PageLive do
   def handle_event("predict", _params, socket) do
     {:noreply, push_event(socket, "predict", %{})}
   end
+
+  def handle_event("image", "data:image/png;base64," <> raw, socket) do
+    name = Base.url_encode64(:crypto.strong_rand_bytes(10), padding: false)
+    path = Path.join(System.tmp_dir!(), "#{name}.png")
+
+    File.write!(path, Base.decode64!(raw))
+
+    prediction = Digits.Model.predict(path)
+
+    File.rm!(path)
+
+    {:noreply, assign(socket, prediction: prediction)}
+  end
 end

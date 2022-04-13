@@ -50,7 +50,8 @@ defmodule Digits.MixProject do
       {:axon, "~> 0.1.0-dev", github: "elixir-nx/axon"},
       {:exla, "~> 0.1.0-dev", github: "elixir-nx/nx", sparse: "exla"},
       {:nx, "~> 0.1.0-dev", github: "elixir-nx/nx", sparse: "nx", override: true},
-      {:scidata, "~> 0.1.5"}
+      {:scidata, "~> 0.1.5"},
+      {:evision, "~> 0.1.0-dev", github: "cocoa-xu/evision", branch: "main"}
     ]
   end
 
