@@ -16,7 +16,8 @@ config :digits, DigitsWeb.Endpoint,
   secret_key_base: "nM5E64hgkIO+9u3OKqw0cLBUxTBbpFpC1H+jTS1qpmav/WgsqxH4zVujGphpKqBn",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
