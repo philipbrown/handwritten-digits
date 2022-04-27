@@ -34,7 +34,11 @@ defmodule DigitsWeb.PageLive do
   end
 
   def handle_event("reset", _params, socket) do
-    {:noreply, push_event(socket, "reset", %{})}
+    {:noreply,
+      socket
+      |> assign(prediction: nil)
+      |> push_event("reset", %{})
+    }
   end
 
   def handle_event("predict", _params, socket) do
